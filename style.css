@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+--clr-primary: #6366F1;
+
+
+--clr-gray-600: #9397AD;
+--clr-gray-800: #33354D;
+--clr-white: #FFFFFF;
+
+--container-padding: 1rem;
+
+--font-weight-700:700;
+--font-weight-400:400;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--container-padding);
+  align-items: center;
+}
+
+header .container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  padding: var(--container-padding);
+}
+
+/* Navbar */
+
+#logo {
+  margin-top: .2rem;
+  margin-right: .5rem;
+}
+
+.navbar {
+  display: none; /*Tar bort Features-texten vid mobilt läge */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--clr-gray-800);
+  font-weight: 700;
+}
+
+.navbar a:hover {
+  color: var(--clr-primary);
+}
+
+/* Buttons in header */
+
+#sign-in {
+  display: none; /* Tar bort header-knappen vid mobilt läge*/
+}
+
+.btn-mobile {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--clr-gray-800);
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  font-weight: var(--font-weight-700);
+  border-radius: .5em;
+  padding: .8em 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.btn-primary i {
+  margin-right: .5em;
+}
+
+.btn-primary:hover{
+  background-color: var(--clr-gray-600);
+  color: var(--clr-white);
+  text-decoration: none;
+}
+
+
+/* Dark mode Toggle */
+
+.label {
+  display: none; /*Tar bort texten vid mobilt läge */
+  font-weight: var(--font-weight-700);
+}
+
+.btn-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.toggle { /* Mycket av koden/inspiration för toggle kommer från från Joakim Lindh*/
+  --_w: 60px;
+  --_h: 30px;
+  width: var(--_w);
+  height: var(--_h);
+  display: inline-block;
+  position: relative;
+
+  input[type="checkbox"] {
+    appearance: none; /*Tar bort checkboxen*/
+  }
+
+  input[type="checkbox"]:focus-visible +.slider {
+    outline:1px solid var(--clr-primary); /*kan "tabbas" fram*/
+    outline-offset: 2px;
+
+  }
+
+  .slider {
+    position: absolute;
+    inset: 0; /* Sträcker sig över hela elementets höjd*/
+    border-radius: 100vw;
+    background-color: var(--clr-gray-600);
+    box-shadow: 0 0 1px #00000085;
+    cursor:pointer;
+    transition: 0.5s ease;
+  }
+
+  .slider::before {
+    content:"";
+    position: absolute;
+    top: 6%;
+    left: .1%;
+    height: 90%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+    box-shadow: 0 0 1px #00000085;
+    transition: 0.5s ease;
+  }
+
+  input[type="checkbox"]:checked + .slider::before {
+    left: 55%; /*Kan behöva finjusteras */
+  }
+  input[type="checkbox"]:checked + .slider {
+    background-color: var(--clr-primary);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+footer {
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    p {
+      color: var(--clr-gray-600);
+      font-size: 1rem;
+    }
+  }
+}
+
+
+  /************ Media Queries*************/
+
+
+        /*Navbar*/
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .label {
+    display: block; /* label-text "Dark mode" */
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .container {
+    max-width: 1320px;
+  }
+
+ header .container {
+  grid-template-columns: auto 1fr auto auto;
+  gap: 2rem;
+ }
+
+ .label {
+  font-weight: var(--font-weight-400);
+  color: var(--clr-gray-700);
+  opacity: .8;
+ }
+
+ .navbar {
+  display: block;
+}
+
+ .btn-mobile {
+  display: none;
+ }
+
+  #sign-in {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+/* Footer*/
+
+@media (min-width: 768px) {
+
+  footer{
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+}

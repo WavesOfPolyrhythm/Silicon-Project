@@ -9,13 +9,16 @@
 :root {
 --clr-primary: #6366F1;
 
+--clr-gray-bg-p3: #F3F6FF;
 
+--clr-gray-300: #E2E5F1;
 --clr-gray-600: #9397AD;
 --clr-gray-800: #33354D;
 --clr-white: #FFFFFF;
 
 --container-padding: 1rem;
 
+--font-weight-900:900;
 --font-weight-700:700;
 --font-weight-400:400;
 }
@@ -32,8 +35,9 @@ body {
   font-size: 16px;
 }
 
+
 .container {
-  width: 100%;
+  /*min-width: 100%; Tog bort denna för att labba med bredden*/ 
   margin: 0 auto;
   padding-inline: var(--container-padding);
   align-items: center;
@@ -41,6 +45,7 @@ body {
 
 header .container {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr auto auto;
   gap: 2rem;
   padding: var(--container-padding);
@@ -166,6 +171,205 @@ header .container {
 
 }
 
+/*******Page 2 section App features*****/
+
+/* Denna del med Brands tog jag mycket hjälp av "tips och tricks videon från Hans"*/
+#brands {
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 800px;
+  }
+}
+
+    .brand-box {
+    border: 1px solid var(--clr-gray-300);
+    border-radius: 0.4rem;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+/*Gamla lösningen*/
+/*#brands {
+  display: none;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .brand-box {
+    border-radius: .4rem;
+    padding: 2rem 2rem;
+    border: 1px solid rgb(184, 182, 182);
+  }
+
+  #brand-3 {
+    padding: 2.4rem 1.8rem;
+  }
+}*/
+
+
+
+/********* Page three, Section "How does it work" *********/
+
+
+.img-tablet {
+  display: none;
+}
+
+.img-desktop {
+  display: none;
+}
+
+.text-tablet {
+  display: none;
+}
+
+.text-desktop {
+  display: none;
+}
+
+.section-how {
+  background-color: var(--clr-gray-bg-p3);
+  .container {
+    margin-top: 5rem;
+    padding: 3rem;
+  }
+}
+
+
+.headline {
+  text-align: center;
+
+  h1 {
+    font-weight: var(--font-weight-900);
+    font-size: 1.7rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.img-mobile {
+  padding-bottom: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.text-mobile h2 {
+  max-width: 300px;
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: var(--font-weight-900);
+
+}
+
+.text-mobile p {
+  text-align: center;
+  font-weight: var(--font-weight-400);
+  font-size: 1.1rem;
+  max-width: 450px;
+  margin-top: 1rem;
+  margin-left: .5rem;
+  color: #585C7B;
+}
+
+
+
+.img-tablet {
+  margin: auto;
+  max-width: 800px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+
+.text-tablet {
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+}
+
+.text-tablet h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-900);
+}
+
+.text-tablet p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #585C7B;
+}
+
+
+
+/* DENNA DEL BEHÖVER FIXAS */
+.img-desktop { 
+  margin: auto;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+
+  .phones {
+    max-width: 230px;
+    margin: 0 3rem;
+  }
+}
+
+
+.text-desktop {
+  margin: auto;
+  max-width: 900px;
+  display: flex;
+}
+
+
+.text-desktop h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-900);
+}
+
+.text-desktop p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #585C7B;
+}
+
+
+/***** Page 5 "Clients are loving our App"*****/
+
 
 
 
@@ -206,14 +410,23 @@ footer {
 }
 
 
+
+
+
+
+
+
+
+
   /************ Media Queries*************/
 
 
         /*Navbar*/
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 720px;
+
+  header .container {
+    max-width: 768px;
   }
 
   .label {
@@ -224,7 +437,7 @@ footer {
 
 @media (min-width: 1400px) {
 
-  .container {
+  header .container {
     max-width: 1320px;
   }
 
@@ -254,6 +467,176 @@ footer {
 
 
 
+
+/*****Page 2 "App Features"*****/
+
+@media (max-width: 768px) {
+  #brands {
+  display: none;
+  }
+}
+
+@media (min-width: 768px) {
+
+
+
+  #brands {
+    display: block;
+  }
+
+  #brand-5, #brand-6 {
+    display: none;
+  }
+
+
+
+
+}
+
+@media (min-width: 1400px) {
+
+
+
+  #brand-5, #brand-6 {
+    display: flex;
+  }
+
+  #brands {
+
+    .container {
+      max-width: 1200px;
+    }
+  }
+
+}
+
+
+
+/* Page 3, "how does it work"*/
+
+/* Mobile */
+@media (min-width: 400px) {
+  .img-tablet {
+    display: none;
+  }
+
+  .text-tablet {
+    display: none;
+  }
+  .img-desktop {
+    display: none;
+  }
+
+  .text-desktop {
+    display: none;
+  }
+}
+
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    .img-mobile {
+      display: none;
+    }
+
+    .text-mobile {
+      display: none;
+    }
+
+    .img-tablet {
+      display: block;
+    }
+
+    .text-tablet {
+      display: block;
+    }
+
+    .headline h1 {
+      font-size: 2.2rem;
+      padding-top: 2rem;
+    }
+
+    .text-tablet {
+      max-width: 580px;
+      padding: 2rem;
+
+      h2 {
+        font-size: 1.65rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        opacity: .95;
+      }
+    }
+  }
+
+/* Desktop*/
+
+@media (min-width: 1400px) {
+
+  .section-how {
+    background-color: #D9D9D9;
+  }
+  .img-desktop {
+    display: block;
+  }
+
+  .img-tablet {
+    display: none;
+  }
+
+  .text-tablet {
+    display: none;
+  }
+
+  .text-desktop {
+    display: block;
+  }
+
+  .headline h1 {
+    font-size: 2.2rem;
+    font-weight: var(--font-weight-900);
+    padding-top: 2rem;
+  }
+
+  .text-desktop {
+    max-width: 850px;
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: var(--font-weight-900);
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: var(--font-weight-400);
+      color: var(--clr-gray-800);
+    }
+  }
+
+}
+
+
+
+
+  /***** Page 5 "Clients are loving our App"*****/
+
+
+
+  @media (min-width: 400px) {
+  }
+
+
+@media (min-width: 768px) {
+
+  }
+
+  @media (min-width: 1400px) {
+
+  }
 
 
 

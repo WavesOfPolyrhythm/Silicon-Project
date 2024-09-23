@@ -11,9 +11,23 @@
 
 --clr-gray-bg-p3: #F3F6FF;
 
+
+--font-size-h1-40: 2.5rem;
+--font-size-h2-32: 2rem;
+--font-size-h3-28: 1.75rem;
+--font-size-h4-24: 1.5rem;
+--font-size-h5-20: 1.25rem;
+--font-size-h6-16: 1rem;
+
+
+--clr-gray-100: #F3F6FF;
+--clr-gray-200: #EFF2FC;
 --clr-gray-300: #E2E5F1;
 --clr-gray-600: #9397AD;
+--clr-gray-700: #585C7B;
 --clr-gray-800: #33354D;
+--clr-gray-900: #0B0F19;
+
 --clr-white: #FFFFFF;
 
 --container-padding: 1rem;
@@ -220,6 +234,93 @@ header .container {
 }*/
 
 
+.app-container {
+  padding: 1rem 1rem;
+}
+
+.features-iphone {
+  display: none;
+}
+
+
+
+.big-textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-weight: var(--font-weight-900);
+    text-align: center;
+    font-size: 1.5rem;
+    margin: .8rem 0;
+  }
+
+  p {
+    color: var(--clr-gray-700);
+  margin: .8rem 0;
+  text-align: center;
+  font-size: 1rem;
+  }
+}
+
+.features-container {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 2rem;
+
+  .feature-boxes {
+    max-width: 620px;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .text-boxes p {
+    margin-top: .8em;
+    color: var(--clr-gray-700);
+  }
+}
+
+
+/*
+.features-container {
+  display: grid;
+  gap: 2rem;
+
+
+  .feature-boxes {
+
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem
+  }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /********* Page three, Section "How does it work" *********/
 
@@ -333,16 +434,11 @@ header .container {
 
 
 /* DENNA DEL BEHÖVER FIXAS */
-.img-desktop { 
-  margin: auto;
+.phone-container { 
   display: flex;
-  justify-content: center;  
-  align-items: center;
-
-  .phones {
-    max-width: 230px;
-    margin: 0 3rem;
-  }
+  justify-content: space-around;
+  margin: auto;
+  max-width: 1400px;
 }
 
 
@@ -374,7 +470,65 @@ header .container {
 
 
 
+/*****  Subscribe"*****/
 
+.subscribe .container {
+  margin: 2rem 1rem;
+  padding: 2.5rem 1rem;
+  background-color: var(--clr-gray-bg-p3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.image-containter img {
+  height: 2px;
+}
+
+.btn {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 1.5rem 2.5rem;
+  border: none;
+  font-size: 1.3rem;
+  }
+  .form-input {
+    border: 2px solid #d3d2d2;
+    font-size: 1.3rem;
+    font-weight: var(--font-weight-400);
+    padding: 1.40rem;
+    opacity: 50%;
+  }
+
+  
+  
+  
+  .input-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  
+    .form-input {
+      border-radius: .5rem 0 0 .5rem;
+    }
+    .btn {
+          border-radius: 0 .5rem .5rem 0;
+    }
+  }
+  
+  .icon {
+    position: absolute;
+    top:35%;
+    right:95%;
+    font-size: 1.3rem;
+    opacity:70%;
+  }
+  
+  .email {
+    padding-left: 3rem;
+  }
+  
 
 
 
@@ -478,8 +632,6 @@ footer {
 
 @media (min-width: 768px) {
 
-
-
   #brands {
     display: block;
   }
@@ -488,13 +640,37 @@ footer {
     display: none;
   }
 
-
-
+  .features-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 1.5rem;
+  }
 
 }
 
 @media (min-width: 1400px) {
 
+  .features-iphone {
+    display: block;
+
+    img {
+      margin-top: 2rem;
+      max-width: 250px;
+    }
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: row-reverse;
+
+
+  .big-textbox {
+    max-width: 700px;
+  }
+}
+
+.features-container {
+  grid-template-columns: 1fr 1fr;
+}
 
 
   #brand-5, #brand-6 {

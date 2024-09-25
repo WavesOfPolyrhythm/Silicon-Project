@@ -579,6 +579,89 @@ header .container {
 }
 
 
+
+
+/******'Page 4 "Money Transfer**********/
+
+.section-money {
+  padding: 3rem;
+  margin: 0 15rem;
+  .container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr auto;
+    max-width: 1400px;
+
+    .boxes {
+      max-width: fit-content;
+
+      h2 {
+        line-height: 2.5rem;
+        color: var(--clr-gray-900);
+        font-weight: var(--font-weight-700);
+        font-size: var(--font-size-h3-28);
+      }
+
+      .btn-primary {
+        max-width: 12rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+
+    .box-1 {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-right: 10rem;
+      margin-bottom: 2rem;
+      
+
+      .ul-flex li {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .5rem;
+        line-height: 2rem;
+      }
+
+    
+      
+    }
+    .box-2 {
+
+      img {
+        
+      }
+
+    }
+    .box-3 {
+
+      img {
+        
+      }
+
+    }
+    .box-4 {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .icon-boxes {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        max-width: 33rem;
+      }
+      
+
+    }
+  }
+}
+
+
 /***** Page 5 "Clients are loving our App"*****/
 
 .section-reviews {
@@ -1042,6 +1125,15 @@ footer {
     }
   }
 
+}
+
+
+/**********P4 Section Money Transfer **********/
+
+@media (width < 1400px) {
+  .section-money {
+    display: none;
+  }
 }
 
 

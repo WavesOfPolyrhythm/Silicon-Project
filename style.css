@@ -8,6 +8,7 @@
 
 :root {
 --clr-primary: #6366F1;
+--clr-primary-linear-gradient: 0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%;
 
 --clr-gray-bg-p3: #F3F6FF;
 
@@ -185,10 +186,122 @@ header .container {
 
 }
 
+/******** HERO Section *******/
+
+#section-hero {
+  background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  padding-bottom: 1rem;
+  text-align: center;
+
+  .hero-container {
+    margin: 0 1.5rem;
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: var(--font-weight-900);
+    }
+
+    .content {
+      margin: 1.5rem 0;
+
+      p {
+        color: var(--clr-gray-700);
+        font-size: 1.35rem;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2.7rem 0;
+        gap: 1rem;
+      }
+
+      .btn-app {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .8em 1em;
+        border: none;
+        border-radius: .7em;
+        background-color: transparent;
+        cursor: pointer;
+      
+        transition: background 200ms ease;
+
+        background-color: var(--clr-gray-900);
+        color: var(--clr-white);
+      
+        &:hover,
+        &:focus-visible {
+          background-color: var(--clr-primary);
+        }
+      
+        &:active {
+          background-color: var(--clr-gray-900);
+        }
+      
+        img {
+            width: 9rem;
+            height: auto;
+        }
+      }
+      
+    }
+  }
+
+  .discover-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-decoration: none;
+  }
+  
+
+  .btn-circle {
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+    color: var(--clr-gray-700);
+    box-shadow: 0 0 6px var(--clr-gray-300), 1px 2px 2px var(--clr-gray-300);
+  }
+
+  .discover-text {
+    color: var(--clr-gray-900);
+      text-decoration: none;
+      font-size: 1rem;
+  }
+
+}
+
+
+.iphones-image-container {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*******Page 2 section App features*****/
 
 /* Denna del med Brands tog jag mycket hjälp av "tips och tricks videon från Hans"*/
 #brands {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 
   .container {
     display: flex;
@@ -252,7 +365,7 @@ header .container {
   h2 {
     font-weight: var(--font-weight-900);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: .8rem 0;
   }
 
@@ -684,7 +797,28 @@ footer {
 
 
 
-/*****Page 2 "App Features"*****/
+/*********Hero Section**********/
+
+@media (min-width: 768px) {
+
+  .iphones-image-container {
+    display: block;
+
+    img {
+      max-width: 750px;
+      }
+    }
+
+
+    .hero-container .button-container {
+        flex-direction: row;   /***Funkar inte?***/
+      }
+
+}
+
+
+
+/*****Page 2 "App Features" *****/
 
 @media (max-width: 768px) {
   #brands {

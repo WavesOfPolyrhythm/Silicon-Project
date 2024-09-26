@@ -12,6 +12,8 @@
 
 --clr-gray-bg-p3: #F3F6FF;
 
+--clr-success: #22C55E;
+
 
 --font-size-h1-40: 2.5rem;
 --font-size-h2-32: 2rem;
@@ -275,7 +277,7 @@ header .container {
 
   .discover-text {
     color: var(--clr-gray-900);
-      text-decoration: none;
+    text-decoration: none;
       font-size: 1rem;
   }
 
@@ -581,6 +583,9 @@ header .container {
 
 
 
+
+
+
 /******'Page 4 "Money Transfer**********/
 
 .section-money {
@@ -728,6 +733,133 @@ header .container {
 
 
 
+/********FAQ-Section************/
+
+.faq-container {
+  margin: 2rem 2rem;
+
+  .headline {
+    margin-bottom: 3rem;
+  
+    h2 {
+      font-size: var(--font-size-h3-28);
+      font-weight: var(--font-weight-900);
+      line-height: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      color: var(--clr-gray-700);
+      font-size: 1rem;
+      font-weight: var(--font-weight-400);
+    }
+  }
+
+  .form-container {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .forms {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      box-shadow: -1px 3px 9px -6px rgba(0, 0, 0, 0.37);
+
+      .form-headline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: var(--clr-gray-900);
+        font-weight: var(--font-weight-700);
+      }
+      
+    
+      .btn-circle {
+        height: 2em;
+        width: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--clr-gray-100);
+        color: var(--clr-gray-800);
+      }
+
+      .btn-circle-primary {
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
+        box-shadow: 0 5px 6px -3px var(--clr-primary);
+      }
+
+      i {
+        font-size: .65rem;
+        font-weight: var(--font-weight-900);
+      }
+
+      p {
+        line-height: 1.5rem;
+        color: var(--clr-gray-700);
+        font-size: .9rem;
+      }
+
+    }
+  }
+
+  .contact-cards {
+
+    display: flex;
+    gap: 1.5rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-grow: 1;
+      gap: 1rem;
+      padding: 1.5rem 1.5rem 2rem;
+      border: 1px solid var(--clr-gray-300);
+      border-radius: .5rem;
+
+      p {
+        color: var(--clr-gray-700);
+        font-size: .85rem;
+      }
+
+
+
+      .contact-box {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       gap: .75rem;
+
+      &.phone { /*Fick hjälp av chatt gpt här för att komma åt klassen phone och message med en "&"*/
+        p, i {
+          color: var(--clr-primary);
+          font-weight: var(--font-weight-700);
+        }
+      }
+
+      &.message {
+        p, i {
+          color: var(--clr-success);
+          font-weight: var(--font-weight-700);
+        }
+      }
+
+      }
+
+    }
+  }
+}
+
+
+
 
 
 /*****  Subscribe"*****/
@@ -764,6 +896,7 @@ header .container {
   padding: 1.25rem 1.5rem;
   border: none;
   font-size: 1.35rem;
+  cursor: pointer;
   }
   .form-input {
     border: 1px solid #d3d2d2;
@@ -1147,6 +1280,52 @@ footer {
      display:block;
   }
   }
+
+
+  /******************FAQ-Section**********************/
+
+
+@media (max-width: 768px) {
+
+.forms {
+
+  .btn-circle-primary {
+    display: none;
+  }
+
+  .btn-circle {
+    display: flex; 
+    background-color: var(--clr-gray-100); 
+    color: var(--clr-gray-800);
+  }
+
+  &.f-3 {
+    p {
+      display: none;
+    }
+
+  }
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /****** Section SUBSCRIBE*********/

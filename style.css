@@ -789,11 +789,12 @@ header .container {
         color: var(--clr-gray-800);
       }
 
+      /*
       .btn-circle-primary {
         background-color: var(--clr-primary);
         color: var(--clr-white);
         box-shadow: 0 5px 6px -3px var(--clr-primary);
-      }
+      } */
 
       i {
         font-size: .65rem;
@@ -1284,32 +1285,125 @@ footer {
 
   /******************FAQ-Section**********************/
 
+  @media (max-width: 480px) {
+
+    .faq-container {
+      .form-container {
+        border-radius: .5rem .5rem .5rem .5rem; /*Fixa detta*/
+       .forms {
+        
+        padding: 1.5rem 2rem;
+       }
+      }
+    }
+  }
+
 
 @media (max-width: 768px) {
 
-.forms {
+  
 
-  .btn-circle-primary {
-    display: none;
-  }
+  .faq-container {
+    margin: 1rem 1rem;
 
-  .btn-circle {
-    display: flex; 
-    background-color: var(--clr-gray-100); 
-    color: var(--clr-gray-800);
-  }
+    .headline {
+      margin: 1rem 1rem;
 
-  &.f-3 {
-    p {
-      display: none;
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.05rem;
+      }
     }
 
+    .form-container {
+      border-right: 1px solid var(--clr-gray-300);
+      border-bottom: 1px solid var(--clr-gray-300);
+      border-left: 1px solid var(--clr-gray-300);
+      gap: 0;
+      
+      .forms {
+        border-top: 1px solid var(--clr-gray-300);
+        box-shadow: none;
+        
+
+        .headline-text {
+          font-size: 1rem;
+        }
+
+        &.f-3 {
+          p {
+            display: none;
+          }
+        }
+      }
+
+      .f-1 {
+        
+        .btn-circle-primary {
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+          box-shadow: 0 5px 6px -3px var(--clr-primary);
+        }
+      }
+    }
+
+    .contact-cards {
+      display: none;
+    }
+  }
+
+
+}
+
+
+@media (min-width: 768px) {
+ 
+  .faq-container {
+    margin: 1rem 1rem;
+
+    .headline {
+      .header {
+        margin: 0 14rem;
+      }
+    }
+
+    .form-container {
+      .forms {
+
+        &.f-1 {
+          p {
+            display: none;
+          }
+      }
+
+      &.f-3 {
+          
+        .btn-circle-primary {
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+          box-shadow: 0 5px 6px -3px var(--clr-primary);
+        }
+
+      }
+    }
   }
 }
-
-
 }
 
+
+
+@media (min-width: 1400px) {
+
+  .faq-container {
+    display: grid;
+    gap: 8rem;
+    grid-auto-flow: column;
+
+    /*Lägg in grid-template-area på varje del här*/
+  }
+}
 
 
 

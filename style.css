@@ -378,6 +378,7 @@ header .container {
     text-align: center;
     font-size: 1.75rem;
     margin: .8rem 0;
+    margin-bottom: 1.5rem;
   }
 
   p {
@@ -1137,8 +1138,8 @@ footer {
         display: block;
         grid-area: iphones-image-container;
         position: absolute;
-        right: -3rem;
-        bottom: -10.5rem;
+        align-self: start;
+        right: -1.8rem;
 
         img {
           width: 500px;
@@ -1184,6 +1185,35 @@ footer {
 }
 
 
+@media (min-width:1400px) {
+
+  #section-hero {
+    .hero-container {
+      margin-top: 3rem;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "headline iphones-image-container"
+      "content iphones-image-container";
+      gap: 0;
+
+      .headline {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      .iphones-image-container {
+        bottom: -15rem;
+
+        img {
+          width: 900px;
+          height: 780px;
+        }
+
+      }
+
+    }
+  }
+}
 
 
 
@@ -1205,9 +1235,17 @@ footer {
     display: none;
   }
 
+  .app-container {
+    .big-textbox {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+
   .features-container {
     grid-template-columns: 1fr 1fr;
-    margin: 1rem 1.5rem;
+    margin: 2rem 4rem;
+    gap: 3rem;
   }
 
 }
@@ -1224,6 +1262,7 @@ footer {
       gap: 2rem;
     }
     .app-container {
+      
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -1231,7 +1270,7 @@ footer {
       .big-textbox {
         align-items: flex-start;
         justify-content: flex-start;
-        margin-left: 2rem;
+        margin-left: 6rem;
         margin-bottom: 2rem;
 
         p {
@@ -1239,6 +1278,12 @@ footer {
           color: var(--clr-gray-600);
           font-size: .95rem;
           }
+      }
+
+      .features-container {
+       
+        margin: 2rem 5rem;
+        gap: 2rem;
       }
   }
   }
@@ -1271,7 +1316,7 @@ footer {
 /* Page 3, "how does it work"*/
 
 /* Mobile */
-@media (min-width: 400px) {
+@media (max-width: 768px) {
   .img-tablet {
     display: none;
   }
@@ -1306,6 +1351,10 @@ footer {
 
     .text-tablet {
       display: block;
+    }
+
+    .text-desktop {
+      display: none;
     }
 
     .headline h1 {
@@ -1522,11 +1571,45 @@ footer {
 
 @media (min-width: 1400px) {
 
+  .section-faq {
+    margin-bottom: 5rem;
+  }
+
   .faq-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas: "headline form-container"
+                          "contact-cards form-container";
     /*Lägg in grid-template-area på varje del här*/
+
+
+    .headline {
+      margin: 0;
+      grid-area: headline;
+      justify-self: center;
+      align-self: end;
+      h2 {
+        text-align: start;
+      }
+
+      p {
+        text-align: start;
+      }
+    }
+
+    .form-container {
+      grid-area: form-container;
+      margin-right: 7.5rem;
+    }
+
+    .contact-cards {
+      grid-area: contact-cards;
+      max-width: 50%;
+      max-height: 65%;
+      justify-self: center;
+    }
   }
 }
 

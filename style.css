@@ -491,8 +491,6 @@ header .container {
 
 .img-mobile {
   padding-bottom: 2rem;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   display: flex;
   align-items: center;
@@ -522,43 +520,31 @@ header .container {
   max-width: 450px;
   margin-top: 1rem;
   margin-left: .5rem;
-  color: #585C7B;
-}
-
-
-
-.img-tablet {
-  margin: auto;
-  max-width: 800px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+  color: var(--clr-gray-700);
 }
 
 
 .text-tablet {
   margin: auto;
-  max-width: 500px;
-  display: flex;
+
+  h2 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-900);
+  }
+
+  p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--clr-gray-700);
+  }
 }
 
-.text-tablet h2 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-900);
-}
 
-.text-tablet p {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #585C7B;
-}
+
+
 
 
 
@@ -1358,21 +1344,37 @@ footer {
     }
 
     .headline h1 {
-      font-size: 2.2rem;
-      padding-top: 2rem;
+      font-size: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    .img-tablet {
+      display: flex;
+      justify-content: center;
+
+      .phone-container-tablet {
+        display: flex;
+        justify-content: center;
+        
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: cover;
+        }
+      }
+    
     }
 
     .text-tablet {
-      max-width: 580px;
+      max-width: 510px;
       padding: 2rem;
 
       h2 {
-        font-size: 1.65rem;
+        font-size: 1.5rem;
       }
 
       p {
-        font-size: 1.2rem;
-        opacity: .95;
+        font-size: 1rem;
       }
     }
   }
@@ -1400,25 +1402,36 @@ footer {
     display: block;
   }
 
-  .headline h1 {
-    font-size: 2.2rem;
-    font-weight: var(--font-weight-900);
-    padding-top: 2rem;
-  }
-
   .text-desktop {
-    max-width: 850px;
-    padding: 2rem;
+    max-width: 550px;
 
     h2 {
-      font-size: 1.4rem;
+      margin: 0;
+      font-size: 1.25rem;
       font-weight: var(--font-weight-900);
     }
 
     p {
-      font-size: 1rem;
+      font-size: .8rem;
       font-weight: var(--font-weight-400);
       color: var(--clr-gray-800);
+      padding-bottom: 1rem;
+    }
+  }
+
+  .img-desktop {
+    display: flex;
+    justify-content: center;
+
+    .phone-container-desktop {
+      display: flex;
+      gap: 2rem;
+
+      img {
+        width: 85%;
+        height: 85%;
+        
+      }
     }
   }
 

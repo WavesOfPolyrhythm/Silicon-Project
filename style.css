@@ -49,10 +49,6 @@ ul {
   list-style: none;
 }
 
-.d5 {
-  font-size: 3rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
 }
@@ -146,20 +142,20 @@ header .container {
   background-color: transparent;
   border: none;
   font-size: 2rem;
-  color: var(--clr-gray-800);
+  color: #3E4265;
+  opacity: 85%;
 }
 
 .btn-primary {
   background-color: var(--clr-primary);
   color: var(--clr-white);
-  font-weight: var(--font-weight-700);
-  border-radius: .5em;
-  padding: .8em 2em;
+  font-weight: var(--font-weight-400);
+  border-radius: .3em;
+  padding: .6em 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-
 }
 
 .btn-primary i {
@@ -173,10 +169,10 @@ header .container {
 }
 
 
-/* Dark mode Toggle */
+/* Dark mode Toggle, tog endel tips av Joakim och lite hjälp av Chat GPT */
 
 .label {
-  display: none; /*Tar bort texten vid mobilt läge */
+  display: none; /* Tar bort texten vid mobilt läge */
   font-weight: var(--font-weight-700);
 }
 
@@ -185,7 +181,8 @@ header .container {
   align-items: center;
   gap: 1rem;
 }
-.toggle { /* Mycket av koden/inspiration för toggle kommer från från Joakim Lindh*/
+
+.toggle { 
   --_w: 60px;
   --_h: 30px;
   width: var(--_w);
@@ -194,45 +191,48 @@ header .container {
   position: relative;
 
   input[type="checkbox"] {
-    appearance: none; /*Tar bort checkboxen*/
+    appearance: none;
   }
 
-  input[type="checkbox"]:focus-visible +.slider {
-    outline:1px solid var(--clr-primary); /*kan "tabbas" fram*/
+  input[type="checkbox"]:focus-visible + .slider {
+    outline: 1px solid var(--clr-primary); /* Kan "tabbas" fram */
     outline-offset: 2px;
-
   }
 
   .slider {
     position: absolute;
-    inset: 0; /* Sträcker sig över hela elementets höjd*/
+    inset: 0;
     border-radius: 100vw;
     background-color: var(--clr-gray-600);
     box-shadow: 0 0 1px #00000085;
-    cursor:pointer;
-    transition: 0.5s ease;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.3s ease;
   }
 
   .slider::before {
-    content:"";
+    content: "";
     position: absolute;
-    top: 6%;
-    left: .1%;
-    height: 90%;
+    top: 7%;
+    left: 5%;
+    height: 85%;
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: var(--clr-white);
     box-shadow: 0 0 1px #00000085;
-    transition: 0.5s ease;
+    transition: transform 0.35s ease;
   }
 
   input[type="checkbox"]:checked + .slider::before {
-    left: 55%; /*Kan behöva finjusteras */
+    transform: translateX(110%); /* Flyttar knappen hela vägen */
   }
+
   input[type="checkbox"]:checked + .slider {
     background-color: var(--clr-primary);
   }
 
+  .slider:hover {
+    box-shadow: 0 0 5px #00000085;
+  }
 }
 
 /******** HERO Section *******/
@@ -244,14 +244,22 @@ header .container {
   background-color: var(--clr-bg);
   background-image: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
 
-  .content {
+  .container-utility {
 
+    h1 {
+      font-size: 2.75rem;
+      font-weight: var(--font-weight-900);
+    }
+  }
+
+  .content {
+    
     h1 {
       font-weight: var(--font-weight-900);
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       color: var(--clr-gray-700);
       line-height: 1.75rem;
     }
@@ -260,7 +268,6 @@ header .container {
   .market-btns {
     display: flex;
     flex-direction: column;
-    
     gap: 1rem;
   }
     
@@ -303,11 +310,13 @@ header .container {
 
       &:hover,
         &:focus-visible {
-          background-color: var(--clr-gray-400);
+          background-color: var(--clr-gray-900);
+          color: var(--clr-white);
         }
       
         &:active {
-          background-color: var(--clr-gray-900);
+          background-color: var(--clr-white);
+          color: var(--clr-gray-900);
         }
     }
 
@@ -323,6 +332,7 @@ header .container {
   .phone-img-container {
     display: none;
   }
+
 
   @media(width > 768px) {
 
@@ -375,6 +385,7 @@ header .container {
 
     .container-utility {
       padding-top: 1rem;
+
       h1 {
         margin-left: 3rem;
         text-align: start;
@@ -391,6 +402,7 @@ header .container {
     .store-btn {
       width: 30%;
       padding: .75em 1em .25em .75em;
+
       img {
         width: 100%;
         height: 85%;
@@ -407,6 +419,7 @@ header .container {
       right: -1.75rem;
     }
   }
+
   @media(width > 1200px) {
 
     .container-utility {
@@ -671,50 +684,6 @@ GAMLA SEKTIONEN SLUT
   }
 }
 
-
-
-
-
-
-/*
-.features-container {
-  display: grid;
-  gap: 2rem;
-
-
-  .feature-boxes {
-
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .text-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: .8rem
-  }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /********* Page three, Section "How does it work" *********/
 
 
@@ -736,6 +705,7 @@ GAMLA SEKTIONEN SLUT
 
 .section-how {
   background-color: var(--clr-gray-bg-p3);
+
   .container {
     margin-top: 5rem;
     padding: 3rem;
@@ -856,11 +826,12 @@ GAMLA SEKTIONEN SLUT
 .section-money {
   padding: 3rem;
   margin: 0 15rem;
+
   .container {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr auto;
-    max-width: 1400px;
+    max-width: 800px;
 
     .boxes {
       max-width: fit-content;
@@ -896,24 +867,8 @@ GAMLA SEKTIONEN SLUT
         gap: .5rem;
         line-height: 2rem;
       }
-
+    }
     
-      
-    }
-    .box-2 {
-
-      img {
-        
-      }
-
-    }
-    .box-3 {
-
-      img {
-        
-      }
-
-    }
     .box-4 {
       display: flex;
       flex-direction: column;
@@ -925,8 +880,6 @@ GAMLA SEKTIONEN SLUT
         gap: 2rem;
         max-width: 33rem;
       }
-      
-
     }
   }
 }
@@ -963,7 +916,6 @@ GAMLA SEKTIONEN SLUT
     position: relative;
     
     .card {
-
       background-color: var(--clr-white);
       padding: 3rem 1rem 1rem 1rem;
       border-radius: .5rem;
@@ -995,7 +947,6 @@ GAMLA SEKTIONEN SLUT
 
           h6{
             font-size: .8rem;
-            
           }
   
           p {
@@ -1421,9 +1372,8 @@ footer {
  }
 
  .label {
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-700);
   color: var(--clr-gray-700);
-  opacity: .8;
  }
 
  .navbar {
@@ -1813,6 +1763,7 @@ footer {
 @media (width < 1400px) {
   .section-money {
     display: none;
+
   }
 }
 
@@ -1836,11 +1787,7 @@ footer {
 @media (max-width: 768px) {
 
   .faq-container {
-
     width: 450px;
-
-    .headline {
-    }
 
     .form-container {
       border: .5px solid var(--clr-gray-300);
@@ -1848,11 +1795,9 @@ footer {
       gap: 0;
       
       .forms {
-        
         box-shadow: none;
 
         &.f-1 {
-
           .arrow-down {
             display: none;
           }

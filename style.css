@@ -582,111 +582,98 @@ GAMLA SEKTIONEN SLUT
 
 
 
-/*******Page 2 section App features*****/
+/**************Page 2 section App features*********/
 
+/*Brand-box delen*/
 /* Denna del med Brands tog jag mycket hjälp av "tips och tricks videon från Hans"*/
 #brands {
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  
+  margin-top: 3rem;
 
   .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 1.5rem;
     max-width: 800px;
   }
 }
 
-    .brand-box {
-    border: 1px solid var(--clr-gray-300);
-    border-radius: 0.4rem;
-    height: 100px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.brand-box {
+  border: 1px solid var(--clr-gray-300);
+  border-radius: 0.4rem;
+  height: 6rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
-/*Gamla lösningen*/
-/*#brands {
-  display: none;
+/******App features*******/
+
+
+.app-features {
 
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
-  .brand-box {
-    border-radius: .4rem;
-    padding: 2rem 2rem;
-    border: 1px solid rgb(184, 182, 182);
+  .features-iphone-image {
+    display: none;
   }
 
-  #brand-3 {
-    padding: 2.4rem 1.8rem;
+  .app-container {
+    margin: 0 auto;
+    width: 350px;
+  
+    .big-textbox {
+      text-align: center;
+    
+      h2 {
+        font-weight: var(--font-weight-900);
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+    
+      p {
+      color: var(--clr-gray-700);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      }
+    }
+    
+    .features-container {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    
+      .feature-boxes {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        .text-boxes {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          h3 {
+            font-weight: var(--font-weight-900);
+          }
+
+          p {
+            color: var(--clr-gray-700);
+          }
+        }
+      }
+    }
   }
-}*/
-
-
-
-.app-container {
-  padding: 1rem 1rem;
 }
 
-.features-iphone {
-  display: none;
-}
 
 
 
-.big-textbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: fit-content;
-
-  h2 {
-    font-weight: var(--font-weight-900);
-    text-align: center;
-    font-size: 1.75rem;
-    margin: .8rem 0;
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-  color: var(--clr-gray-700);
-  font-size: 1  rem;
-  line-height: 1.5rem;
-  text-align: center;
-  }
-}
-
-.features-container {
-  margin-top: 1.5rem;
-  display: grid;
-  gap: 2rem;
-
-  .feature-boxes {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .text-boxes p {
-    margin-top: .8em;
-    color: var(--clr-gray-700);
-  }
-
-  .text-boxes h3 {
-    font-weight: var(--font-weight-900);
-  }
-
-}
 
 
 /*
@@ -1583,83 +1570,100 @@ footer {
     display: block;
   }
 
+  .brand-box {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #brand-5, #brand-6 {
     display: none;
   }
 
-  .app-container {
-    .big-textbox {
-      margin-left: 5rem;
-      margin-right: 5rem;
-    }
-  }
+  .app-features {
 
-  .features-container {
-    grid-template-columns: 1fr 1fr;
-    margin: 2rem 4rem;
-    gap: 3rem;
+    .container {
+      margin-top: 3rem;
+    }
+  
+    .app-container {
+      width: 680px;
+
+      .big-textbox {
+        width: 630px;
+      }
+      
+      .features-container {
+        margin-top: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      
+        .feature-boxes {
+         gap: 1.5rem;
+  
+          .text-boxes {
+            
+            h3 {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: .9rem;
+            }
+          }
+        }
+      }
+    }
   }
 
 }
 
 @media (min-width: 1400px) {
 
-  .app-features {
-    .grid-container {
-      margin-top: 5rem;
-      margin-right: 8rem;
-      margin-left: 8rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
+  #brands {
+    .container {
+      max-width: 1050px;
+
+      #brand-5, #brand-6 {
+        display: flex;
+      }
     }
-    .app-container {
-      
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      .big-textbox {
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-left: 6rem;
-        margin-bottom: 2rem;
-
-        p {
-          text-align: left;
-          color: var(--clr-gray-600);
-          font-size: .95rem;
-          }
-      }
-
-      .features-container {
-       
-        margin: 2rem 5rem;
-        gap: 2rem;
-      }
-  }
   }
 
-  .features-iphone {
-   display: block;
-   display: flex;
+  .brand-box {
 
     img {
-      max-width: 80%;
+      width: 65%;
+      height: 65%;
     }
   }
 
 
-  #brand-5, #brand-6 {
-    display: flex;
-  }
-
-  #brands {
+  .app-features {
 
     .container {
-      max-width: 80%;
+      margin-top: 4rem;
+      width: 1100px;
+      display: grid;
+      gap: 4rem;
+      grid-template-columns: 1fr 1fr;
+
+
+      .features-iphone-image {
+        display: block;
+
+        img {
+          width: 80%;
+        }
+
+      }
     }
+  
   }
+
+
+
 
 }
 

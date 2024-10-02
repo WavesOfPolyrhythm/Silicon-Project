@@ -23,6 +23,7 @@
 --font-size-h6-16: 1rem;
 
 
+--clr-bg: #fff;
 --clr-gray-100: #F3F6FF;
 --clr-gray-200: #EFF2FC;
 --clr-gray-300: #E2E5F1;
@@ -40,10 +41,52 @@
 --font-weight-900:900;
 --font-weight-700:700;
 --font-weight-400:400;
+
+--section-spacing: 2rem;
 }
 
 ul {
   list-style: none;
+}
+
+.d5 {
+  font-size: 3rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 2rem;
+}
+.space-y-3 > * + * {
+  margin-top: 3rem;
+}
+.space-y-4 > * + * {
+  margin-top: 4rem;
+}
+
+.container-utility {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width > 576px) {
+    max-width: 540px;
+  }
+  @media (width > 768px) {
+    max-width: 720px;
+  }
+  @media (width > 992px) {
+      max-width: 960px;
+  }
+  @media (width > 1200px) {
+    max-width: 1140px;
+  }
+  @media (width > 1400px) {
+    max-width: 1320px;
+  }
 }
 
 body {
@@ -55,8 +98,12 @@ body {
 }
 
 
+
+
+/* Navbar */
+
 .container {
-  /*min-width: 100%; Tog bort denna för att labba med bredden*/ 
+  width: 100%;
   margin: 0 auto;
   padding-inline: var(--container-padding);
   align-items: center;
@@ -69,8 +116,6 @@ header .container {
   gap: 2rem;
   padding: var(--container-padding);
 }
-
-/* Navbar */
 
 #logo {
   margin-top: .2rem;
@@ -192,6 +237,238 @@ header .container {
 
 /******** HERO Section *******/
 
+.showcase {
+  overflow: hidden;
+  padding-top: 1rem;
+  text-align: center;
+  background-color: var(--clr-bg);
+  background-image: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+
+  .content {
+
+    h1 {
+      font-weight: var(--font-weight-900);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: var(--clr-gray-700);
+      line-height: 1.75rem;
+    }
+  }
+
+  .market-btns {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 1rem;
+  }
+    
+  .store-btn {
+    background-color: var(--clr-gray-900);
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: .5rem;
+
+    &:hover,
+        &:focus-visible {
+          background-color: var(--clr-primary);
+        }
+      
+        &:active {
+          background-color: var(--clr-gray-900);
+        }
+    img {
+      width: 38%;
+    }
+  }
+
+  .more {
+    padding-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-decoration: none;
+
+    .btn-round {
+      display: inline-block;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      height: 3em;
+      width: 3em;
+
+      &:hover,
+        &:focus-visible {
+          background-color: var(--clr-gray-400);
+        }
+      
+        &:active {
+          background-color: var(--clr-gray-900);
+        }
+    }
+
+    
+
+    .btn-white {
+    background-color: var(--clr-white);
+    color: var(--clr-gray-700);
+    box-shadow: 0 0 6px var(--clr-gray-300), 1px 2px 2px var(--clr-gray-300);
+    }
+  }
+
+  .phone-img-container {
+    display: none;
+  }
+
+  @media(width > 768px) {
+
+    
+    .container-utility {
+      position: relative;
+
+      h1 {
+        line-height: 3.5rem;
+      }
+    }
+    .content {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      width: 45%;
+      text-align: start;
+    }
+
+    .market-btns {
+      flex-direction: row;
+    }
+
+    .store-btn {
+      padding: .5rem .75rem;
+      img {
+        width: 90%;
+        height: 95%;
+      }
+    }
+
+    .more {
+      justify-content: flex-start;
+    }
+    .phone-img-container {
+      display: block;
+      width: 60%;
+      position: absolute;
+      bottom: -8rem;
+      right: -1.75rem;
+
+      img {
+        width: 90%;
+        object-fit: cover;
+      }
+     
+    }
+  }
+
+  @media(width > 992px) {
+
+    .container-utility {
+      padding-top: 1rem;
+      h1 {
+        margin-left: 3rem;
+        text-align: start;
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+      }
+    }
+
+    .content {
+      margin-left: 3rem;
+      width: 45%;
+    }
+
+    .store-btn {
+      width: 30%;
+      padding: .75em 1em .25em .75em;
+      img {
+        width: 100%;
+        height: 85%;
+      }
+    }
+
+    .more {
+      margin-top: 10rem;
+    }
+
+    .phone-img-container {
+      width: 60%;
+      bottom: -11rem;
+      right: -1.75rem;
+    }
+  }
+  @media(width > 1200px) {
+
+    .container-utility {
+      padding-top: 3rem;
+    }
+
+    .market-btns {
+      margin-top: 2rem;
+    }
+    .store-btn {
+      width: 30%;
+      padding: .75em 1em .25em .75em;
+      img {
+        width: 100%;
+        height: 85%;
+      }
+    }
+
+    .content {
+      margin-top: 1rem;
+      width: 38%;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .more {
+      margin-top: 12rem;
+    }
+
+    .phone-img-container {
+      width: 60%;
+      bottom: -13rem;
+      right: 4rem;
+    }
+  }
+
+  @media(width > 1400px) {
+
+    .container-utility {
+      margin-top: 3rem;
+    }
+
+    .content {
+      width: 32%;
+    }
+    .phone-img-container {
+      width: 55%;
+      bottom: -14rem;
+      right: 7rem;
+    }
+  }
+}
+
+
+
+
+
+/**************************************************
+GAMLA HERO SEKTIONEN
+
 #section-hero {
   background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
   padding-bottom: 1rem;
@@ -294,8 +571,8 @@ header .container {
 }
 
 
-
-
+GAMLA SEKTIONEN SLUT
+*********************************************************************************
 
 
 
@@ -1048,7 +1325,8 @@ footer {
 @media (min-width: 768px) {
 
   header .container {
-    max-width: 768px;
+    max-width: 720px;
+    
   }
 
   .label {
@@ -1090,7 +1368,11 @@ footer {
 
 
 
-/*********Hero Section**********/
+/*********Hero (GAMLA) Section**********/
+
+/*GAMLA SEKTIONEN*/
+
+/*
 
 @media (min-width: 768px) {
 
@@ -1201,7 +1483,7 @@ footer {
   }
 }
 
-
+*/
 
 /*****Page 2 "App Features" *****/
 

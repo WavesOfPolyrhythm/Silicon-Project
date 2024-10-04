@@ -63,6 +63,13 @@ ul {
   margin-top: 4rem;
 }
 
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--container-padding);
+  align-items: center;
+}
+
 .container-utility {
   width: 100%;
   margin-inline: auto;
@@ -98,12 +105,6 @@ body {
 
 /* Navbar */
 
-.container { /*Byt ut denna mot container-utility*/
-  width: 100%;
-  margin: 0 auto;
-  padding-inline: var(--container-padding);
-  align-items: center;
-}
 
 header .container {
   max-width: 550px;
@@ -279,6 +280,9 @@ header .container {
 }
 
 /******** HERO Section *******/
+/* Denna sektion tog jag mycket hjälp av Jockes video då jag hade fastnat länge med min grid-struktur. Tog inspiration att istället flytta endel av 
+innehållet med en max-width när Media querien ska kicka in.
+Endel kod kommer från videon men jag har gjort egna justeringar för att anpassa för min sida*/
 
 .showcase {
   overflow: hidden;
@@ -387,6 +391,7 @@ header .container {
         line-height: 3.5rem;
       }
     }
+
     .content {
       margin-top: 3rem;
       padding-top: 1rem;
@@ -518,10 +523,6 @@ header .container {
   }
 }
 
-
-
-
-
 /**************************************************
 GAMLA HERO SEKTIONEN
 
@@ -548,8 +549,6 @@ GAMLA HERO SEKTIONEN
           font-size: 1.35rem;
         }
       }
-
-     
 
       .button-container {
         display: flex;
@@ -600,7 +599,6 @@ GAMLA HERO SEKTIONEN
     text-decoration: none;
   }
   
-
   .btn-circle {
     height: 3em;
     width: 3em;
@@ -618,7 +616,6 @@ GAMLA HERO SEKTIONEN
     text-decoration: none;
       font-size: 1rem;
   }
-
 }
 
 
@@ -629,12 +626,6 @@ GAMLA HERO SEKTIONEN
 
 GAMLA SEKTIONEN SLUT
 *********************************************************************************
-
-
-
-
-
-
 
 
 
@@ -666,7 +657,6 @@ GAMLA SEKTIONEN SLUT
 
 
 /******App features*******/
-
 
 .app-features {
 
@@ -721,6 +711,108 @@ GAMLA SEKTIONEN SLUT
           p {
             color: var(--clr-gray-700);
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #brands {
+  display: none;
+  }
+}
+
+@media (min-width: 768px) {
+
+  #brands {
+    display: block;
+  }
+
+  .brand-box {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #brand-5, #brand-6 {
+    display: none;
+  }
+
+  .app-features {
+
+    .container {
+      margin-top: 3rem;
+    }
+  
+    .app-container {
+      width: 680px;
+
+      .big-textbox {
+        width: 630px;
+      }
+      
+      .features-container {
+        margin-top: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      
+        .feature-boxes {
+         gap: 1.5rem;
+  
+          .text-boxes {
+            
+            h3 {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: .9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+
+  #brands {
+    .container {
+      max-width: 1050px;
+
+      #brand-5, #brand-6 {
+        display: flex;
+      }
+    }
+  }
+
+  .brand-box {
+
+    img {
+      width: 65%;
+      height: 65%;
+    }
+  }
+
+
+  .app-features {
+
+    .container {
+      margin-top: 4rem;
+      width: 1100px;
+      display: grid;
+      gap: 4rem;
+      grid-template-columns: 1fr 1fr;
+
+
+      .features-iphone-image {
+        display: block;
+
+        img {
+          width: 80%;
         }
       }
     }
@@ -835,7 +927,6 @@ GAMLA SEKTIONEN SLUT
 }
 
 
-/* Mobile */
 @media (max-width: 768px) {
 
   .img-tablet {
@@ -855,7 +946,6 @@ GAMLA SEKTIONEN SLUT
 }
 
 
-/* Tablet */
 @media (min-width: 768px) {
 
     .img-mobile {
@@ -913,7 +1003,6 @@ GAMLA SEKTIONEN SLUT
     }
   }
 
-/* Desktop*/
 
 @media (min-width: 1400px) {
 
@@ -968,9 +1057,6 @@ GAMLA SEKTIONEN SLUT
     }
   }
 }
-
-
-
 
 
 /******'Page 4 "Money Transfer**********/
@@ -1054,8 +1140,6 @@ GAMLA SEKTIONEN SLUT
   background-color: var(--clr-gray-100);
 }
 
-
-
 .flex-container {
   padding: 4rem;
   display: flex;
@@ -1128,7 +1212,7 @@ GAMLA SEKTIONEN SLUT
 @media (min-width: 1400px) {
   .section-reviews {
    display:block;
-}
+  }
 }
 
 /********FAQ-Section************/
@@ -1186,7 +1270,6 @@ GAMLA SEKTIONEN SLUT
           font-size: 1rem;
           width: 70%;
         }
-
       }
       
     
@@ -1215,14 +1298,13 @@ GAMLA SEKTIONEN SLUT
       i {
         font-size: .65rem;
         font-weight: var(--font-weight-900);
-      }
+        }
 
       p {
         line-height: 1.5rem;
         color: var(--clr-gray-700);
         font-size: .9rem;
       }
-
     }
   }
 
@@ -1235,7 +1317,7 @@ GAMLA SEKTIONEN SLUT
       font-weight: var(--font-weight-400);
       padding: 1.25em 2.5em;
      }
-  }
+    }
 
   .contact-cards {
 
@@ -1275,17 +1357,162 @@ GAMLA SEKTIONEN SLUT
         p, i {
           color: var(--clr-success);
           font-weight: var(--font-weight-700);
+          }
         }
       }
-
-      }
-
     }
   }
 }
 
 
+@media (max-width: 768px) {
 
+  .faq-container {
+    width: 450px;
+
+    .form-container {
+      border: .5px solid var(--clr-gray-300);
+      border-radius: 1rem;
+      gap: 0;
+      
+      .forms {
+        box-shadow: none;
+
+        &.f-1 {
+          .arrow-down {
+            display: none;
+          }
+
+          .arrow-up {
+            display: block;
+          }
+        
+          .btn-circle-primary {
+            background-color: var(--clr-primary);
+            color: var(--clr-white);
+            box-shadow: 0 5px 6px -3px var(--clr-primary);
+          }
+        }
+
+        &.f-3 {
+
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .contact-cards {
+      display: none;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+ 
+  .faq-container {
+    max-width: 700px;
+
+    .btn {
+      display: none;
+    }
+
+    .headline {
+
+      .header {
+
+        .break {
+          display: block;
+         }
+      }
+
+      .headline-text {
+
+        .break {
+          display: block;
+        }
+      }
+    }
+
+    .form-container {
+
+      .forms {
+
+        &.f-1 {
+
+          p {
+            display: none;
+          }
+      }
+
+      &.f-3 {
+
+        .arrow-up {
+          display: block;
+         }
+
+         .arrow-down {
+          display: none;
+         }
+          
+        .btn-circle-primary {
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+          box-shadow: 0 5px 6px -3px var(--clr-primary);
+        }
+      }
+    }
+  }
+ }
+}
+
+@media (min-width: 1400px) {
+
+  .section-faq {
+    
+    margin-bottom: 5rem;
+
+    .faq-container {
+      max-width: 1250px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "headline form-container"
+                            "contact-cards form-container";
+
+      .headline {
+        grid-area: headline;
+        text-align: start;
+        margin-left: 2rem;
+        margin-top: 3rem;
+
+        .headline-text {
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+  
+      .form-container {
+        grid-area: form-container;
+      }
+  
+      .contact-cards {
+        grid-area: contact-cards;
+        max-width: 400px;
+        margin-left: 2rem;
+        margin-bottom: 27rem;
+
+        .card {
+          justify-content: center;
+          gap: 1rem;
+          padding: .1rem .1rem 0rem 1rem;
+        }
+      }
+    }
+  }
+}
 
 
 /*****  Subscribe"*****/
@@ -1505,11 +1732,6 @@ footer {
 
   /************ Media Queries*************/
 
-
-        /*Navbar*/
-
-
-
 /*********Hero (GAMLA) Section**********/
 
 /*GAMLA SEKTIONEN*/
@@ -1626,288 +1848,3 @@ footer {
 }
 
 */
-
-/*****Page 2 "App Features" *****/
-
-@media (max-width: 768px) {
-  #brands {
-  display: none;
-  }
-}
-
-@media (min-width: 768px) {
-
-  #brands {
-    display: block;
-  }
-
-  .brand-box {
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #brand-5, #brand-6 {
-    display: none;
-  }
-
-  .app-features {
-
-    .container {
-      margin-top: 3rem;
-    }
-  
-    .app-container {
-      width: 680px;
-
-      .big-textbox {
-        width: 630px;
-      }
-      
-      .features-container {
-        margin-top: 2.5rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      
-        .feature-boxes {
-         gap: 1.5rem;
-  
-          .text-boxes {
-            
-            h3 {
-              font-size: 1.2rem;
-            }
-            p {
-              font-size: .9rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1400px) {
-
-  #brands {
-    .container {
-      max-width: 1050px;
-
-      #brand-5, #brand-6 {
-        display: flex;
-      }
-    }
-  }
-
-  .brand-box {
-
-    img {
-      width: 65%;
-      height: 65%;
-    }
-  }
-
-
-  .app-features {
-
-    .container {
-      margin-top: 4rem;
-      width: 1100px;
-      display: grid;
-      gap: 4rem;
-      grid-template-columns: 1fr 1fr;
-
-
-      .features-iphone-image {
-        display: block;
-
-        img {
-          width: 80%;
-        }
-
-      }
-    }
-  
-  }
-
-
-
-
-}
-
-
-
-/* Page 3, "how does it work"*/
-
-
-
-  /******************FAQ-Section**********************/
-
-  
-
-@media (max-width: 768px) {
-
-  .faq-container {
-    width: 450px;
-
-    .form-container {
-      border: .5px solid var(--clr-gray-300);
-      border-radius: 1rem;
-      gap: 0;
-      
-      .forms {
-        box-shadow: none;
-
-        &.f-1 {
-          .arrow-down {
-            display: none;
-          }
-
-          .arrow-up {
-            display: block;
-          }
-        
-          .btn-circle-primary {
-            background-color: var(--clr-primary);
-            color: var(--clr-white);
-            box-shadow: 0 5px 6px -3px var(--clr-primary);
-          }
-  
-        }
-
-        &.f-3 {
-
-          p {
-            display: none;
-          }
-        }
-      }
-
-     
-    }
-
-    .contact-cards {
-      display: none;
-    }
-
-  }
-
-
-}
-
-
-@media (min-width: 768px) {
- 
-  .faq-container {
-    max-width: 700px;
-
-    .btn {
-      display: none;
-    }
-
-    .headline {
-
-      .header {
-
-        .break {
-          display: block;
-         }
-      }
-
-      .headline-text {
-
-        .break {
-          display: block;
-        }
-      }
-    }
-
-    .form-container {
-
-      .forms {
-
-        &.f-1 {
-
-          p {
-            display: none;
-          }
-      }
-
-      &.f-3 {
-
-        .arrow-up {
-          display: block;
-         }
-
-         .arrow-down {
-          display: none;
-         }
-          
-        .btn-circle-primary {
-          background-color: var(--clr-primary);
-          color: var(--clr-white);
-          box-shadow: 0 5px 6px -3px var(--clr-primary);
-        }
-      }
-    }
-  }
- }
-}
-
-
-
-@media (min-width: 1400px) {
-
-  .section-faq {
-    margin-bottom: 5rem;
-
-    .faq-container {
-      max-width: 1250px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "headline form-container"
-                            "contact-cards form-container";
-
-      .headline {
-        grid-area: headline;
-        text-align: start;
-        margin-left: 2rem;
-        margin-top: 3rem;
-
-        .headline-text {
-          p {
-            font-size: 1rem;
-          }
-        }
-       }
-  
-      .form-container {
-        grid-area: form-container;
-      }
-  
-      .contact-cards {
-        grid-area: contact-cards;
-        max-width: 400px;
-        margin-left: 2rem;
-        margin-bottom: 27rem;
-
-        .card {
-          justify-content: center;
-          gap: 1rem;
-          padding: .1rem .1rem 0rem 1rem;
-      }
-    }
-  }
-}
-}
-
-
-  /****** Section SUBSCRIBE*********/
-
-
-
-
-/* Footer*/
-

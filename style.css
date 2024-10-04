@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
 :root {
 --clr-primary: #6366F1;
 --clr-primary-linear-gradient: 0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%;
@@ -43,10 +51,27 @@
 --font-weight-400:400;
 
 --section-spacing: 2rem;
+
+.dark {
+--clr-dark-bg: #0B0F19;
+--clr-dark-text: white;
+--clr-dark-button-bg: #F3F6FF;
+--clr-dark-button-text: #33354D;
+}
+
+
+}
+
+html {
+  color-scheme: light; /* Lade till detta för Dark mode delen */
 }
 
 ul {
   list-style: none;
+}
+
+.dark {
+  color-scheme:dark;
 }
 
 .text-lg {
@@ -92,21 +117,17 @@ ul {
   }
 }
 
-body {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-}
+
 
 
 
 
 /* Navbar */
-
+/* Detta var första delen jag började med och jag tog mycket hjälp av Hans tips och tricks video där
+jag använder mig av grid för att ställa upp navigeringsmenyn etc*/
 
 header .container {
+  min-width: 450px;
   max-width: 550px;
   display: grid;
   align-items: center;
@@ -225,7 +246,7 @@ header .container {
   }
 
   input[type="checkbox"]:checked + .slider::before {
-    transform: translateX(110%); /* Flyttar knappen hela vägen */
+    transform: translateX(110%); /* Denna del hjälpte CHAT GPT mig med men behövde justera lite*/
   }
 
   input[type="checkbox"]:checked + .slider {
@@ -282,7 +303,23 @@ header .container {
 /******** HERO Section *******/
 /* Denna sektion tog jag mycket hjälp av Jockes video då jag hade fastnat länge med min grid-struktur. Tog inspiration att istället flytta endel av 
 innehållet med en max-width när Media querien ska kicka in.
-Endel kod kommer från videon men jag har gjort egna justeringar för att anpassa för min sida*/
+Endel kod kommer från videon men jag har gjort egna justeringar för att anpassa för min sida. Gamla koden finns kvar längre ner*/
+
+.dark {
+  .showcase {
+    background-color: var(--clr-dark-bg);
+
+    .store-btn {
+      background-color: #9397AD;
+    }
+
+  }
+
+  .btn-white {
+    background-color: black;
+    color: var(--clr-dark-button-bg);
+    }
+}
 
 .showcase {
   overflow: hidden;
@@ -290,9 +327,11 @@ Endel kod kommer från videon men jag har gjort egna justeringar för att anpass
   text-align: center;
   background-color: var(--clr-bg);
   background-image: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  margin: 0 auto;
+  min-width: 450px;
 
   .container-utility {
-
+    
     h1 {
       font-size: 2.75rem;
       font-weight: var(--font-weight-900);
@@ -344,6 +383,7 @@ Endel kod kommer från videon men jag har gjort egna justeringar för att anpass
     justify-content: center;
     gap: 1.5rem;
     text-decoration: none;
+    color: var(--clr-gray-700);
 
     .btn-round {
       display: inline-block;
@@ -368,7 +408,6 @@ Endel kod kommer från videon men jag har gjort egna justeringar för att anpass
     }
 
     
-
     .btn-white {
     background-color: var(--clr-white);
     color: var(--clr-gray-700);
@@ -379,6 +418,8 @@ Endel kod kommer från videon men jag har gjort egna justeringar för att anpass
   .phone-img-container {
     display: none;
   }
+
+  
 
 
   @media(width > 768px) {
@@ -640,7 +681,7 @@ GAMLA SEKTIONEN SLUT
   .container {
     display: flex;
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 750px;
   }
 }
 
@@ -657,6 +698,10 @@ GAMLA SEKTIONEN SLUT
 
 
 /******App features*******/
+
+.section-features {
+  min-width: 450px;
+}
 
 .app-features {
 
@@ -797,7 +842,6 @@ GAMLA SEKTIONEN SLUT
     }
   }
 
-
   .app-features {
 
     .container {
@@ -821,8 +865,16 @@ GAMLA SEKTIONEN SLUT
 
 /********* Page three, Section "How does it work" *********/
 
+.dark {
+
+  .section-how {
+    background-color: var(--clr-gray-900);
+  }
+}
+
 .section-how {
-  background-color: var(--clr-gray-bg-p3);
+  min-width: 450px;
+  background-color: var(--clr-gray-100);
 
   .container {
     margin-top: 5rem;
@@ -1006,9 +1058,6 @@ GAMLA SEKTIONEN SLUT
 
 @media (min-width: 1400px) {
 
-  .section-how {
-    background-color: #D9D9D9;
-  }
   .img-desktop {
     display: block;
   }
@@ -1060,6 +1109,34 @@ GAMLA SEKTIONEN SLUT
 
 
 /******'Page 4 "Money Transfer**********/
+
+.dark {
+
+
+  .section-money {
+
+    .container {
+
+      .boxes {
+        h2 {
+          color: white;
+        }
+
+        p {
+          color: var(--clr-gray-400);
+        }
+      }
+
+      .box-1 {
+
+        .ul-flex li {
+          color: var(--clr-gray-400);
+        }
+      }
+    }
+    
+  }
+}
 
 .section-money {
   margin: 3rem;
@@ -1133,11 +1210,31 @@ GAMLA SEKTIONEN SLUT
 }
 
 
-/***** Page 5 "Clients are loving our App"*****/
+/***** Page 5 Reviews "Clients are loving our App"*****/
+
+.dark {
+  .section-reviews {
+    background-color: var(--clr-gray-900);
+
+   .flex-container {
+
+    .cards {
+      .card {
+        background-color: var(--clr-gray-900);
+        p {
+          color: var(--clr-gray-400);
+        }
+      }
+
+    }
+   }
+  }
+}
 
 .section-reviews {
   display:none;
   background-color: var(--clr-gray-100);
+
 }
 
 .flex-container {
@@ -1217,6 +1314,27 @@ GAMLA SEKTIONEN SLUT
 
 /********FAQ-Section************/
 
+.dark {
+
+  .section-faq {
+  .faq-container {
+
+    .form-container {
+      
+      .forms {
+        background-color: var(--clr-gray-900);
+
+        .form-headline {
+          .headline-text {
+            color: var(--clr-gray-300);
+          }
+        }
+      }
+    }
+    }
+  }
+}
+
 .faq-container {
   margin-inline: auto;
   margin-bottom: 2rem;
@@ -1250,6 +1368,7 @@ GAMLA SEKTIONEN SLUT
 
 
     .forms {
+      border-radius: .5rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -1517,6 +1636,16 @@ GAMLA SEKTIONEN SLUT
 
 /*****  Subscribe"*****/
 
+.dark {
+  .subscribe .container {
+    background-color: var(--clr-gray-900);
+  }
+}
+
+.subscribe {
+  min-width: 450px;
+}
+
 .subscribe .container {
   width: 95%;
   margin: auto;
@@ -1703,6 +1832,7 @@ GAMLA SEKTIONEN SLUT
 footer {
 
   .footer-container {
+    min-width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;

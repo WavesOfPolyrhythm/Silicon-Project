@@ -1,0 +1,31 @@
+/* Footer */
+
+footer {
+
+  .footer-container {
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    p {
+      color: var(--clr-gray-600);
+      font-size: .75rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  footer {
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+   }
+  }
+ }

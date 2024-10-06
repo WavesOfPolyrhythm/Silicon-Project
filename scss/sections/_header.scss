@@ -1,0 +1,185 @@
+.dark {
+
+  header {
+  background-color: var(--clr-dark-bg);
+  background-image: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+  }
+}
+
+header .container {
+  min-width: 450px;
+  max-width: 550px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  padding: var(--container-padding);
+}
+
+#logo {
+  margin-top: .2rem;
+  margin-right: .5rem;
+}
+
+.navbar {
+  display: none; /*Tar bort Features-texten vid mobilt läge */
+
+  a {text-decoration: none;
+  color: var(--clr-gray-800);
+  font-weight: 700;
+
+  &:hover {
+    color: var(--clr-primary);
+    }
+  }
+}
+
+/* Buttons in header */
+
+.btn-mobile {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #3E4265;
+  opacity: 85%;
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  font-weight: var(--font-weight-400);
+  border-radius: .3em;
+  padding: .5em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover{
+    background-color: var(--clr-gray-900);
+    color: var(--clr-white);
+    text-decoration: none;
+  }
+
+  i {
+    margin-right: .5em;
+  }
+}
+
+#sign-in {
+  display: none; /* Tar bort header-knappen vid mobilt läge*/
+
+  font-size: .9rem;
+}
+
+/* Dark mode Toggle, tog endel tips av Joakim och lite hjälp av Chat GPT */
+
+.label {
+  display: none; /* Tar bort texten vid mobilt läge */
+  font-weight: var(--font-weight-700);
+}
+
+.btn-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle { 
+  --_w: 60px;
+  --_h: 30px;
+  width: var(--_w);
+  height: var(--_h);
+  display: inline-block;
+  position: relative;
+
+  input[type="checkbox"] {
+    appearance: none;
+  }
+
+  input[type="checkbox"]:focus-visible + .slider {
+    outline: 1px solid var(--clr-primary); /* Kan "tabbas" fram */
+    outline-offset: 2px;
+  }
+
+  .slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 100vw;
+    background-color: var(--clr-gray-600);
+    box-shadow: 0 0 1px #00000085;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7%;
+      left: 5%;
+      height: 85%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: var(--clr-white);
+      box-shadow: 0 0 1px #00000085;
+      transition: transform 0.35s ease;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px #00000085;
+    }
+  }
+
+  input[type="checkbox"]:checked + .slider::before {
+    transform: translateX(110%); /* Denna del hjälpte CHAT GPT mig med men behövde justera lite*/
+  }
+
+  input[type="checkbox"]:checked + .slider {
+    background-color: var(--clr-primary);
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  header .container {
+    max-width: 720px;
+    
+  }
+
+  .label {
+    display: block; /* label-text "Dark mode" */
+  }
+
+}
+
+@media (min-width: 992px) {
+  header .container {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  header .container {
+    max-width: 1250px;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1.5rem;
+  }
+
+ .label {
+  font-weight: var(--font-weight-700);
+  color: var(--clr-gray-700);
+ }
+
+ .navbar {
+  display: block;
+}
+
+ .btn-mobile {
+  display: none;
+ }
+
+  #sign-in {
+    display: block;
+  }
+}

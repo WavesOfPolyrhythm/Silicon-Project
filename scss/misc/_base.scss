@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+html {
+  color-scheme: light; /* Lade till detta för Dark mode delen */
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  color: var(--clr-gray-700);
+}
+
+.dark {
+  color-scheme:dark;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 2rem;
+}
+.space-y-3 > * + * {
+  margin-top: 3rem;
+}
+.space-y-4 > * + * {
+  margin-top: 4rem;
+}

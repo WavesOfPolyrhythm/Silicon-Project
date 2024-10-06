@@ -1,0 +1,191 @@
+/*****  Subscribe"*****/
+
+.dark {
+  .subscribe .container {
+    background-color: var(--clr-gray-900);
+  }
+}
+
+.subscribe {
+  min-width: 450px;
+}
+
+.subscribe .container {
+  width: 95%;
+  margin: auto;
+  padding: 2.5rem;
+  background-color: var(--clr-gray-bg-p3);
+  display: flex;
+  flex-direction: column;
+  border-radius: .5rem;
+
+  .item-group {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+
+  }
+
+  .image-container {
+    img {
+      width: 4.25rem;
+    }
+  }
+
+  .header {
+    h2 {
+      margin: 0 1rem;
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-900);
+    }
+    h2::after {
+      content: '';
+    }
+  }
+}
+
+
+.btn {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 1rem 1.25rem;
+  border: none;
+  font-size: .9rem;
+  cursor: pointer;
+  font-weight: var(--font-weight-400);
+  }
+  
+  .form-input {
+    border: 1px solid #d3d2d2;
+    border-right: none;
+    font-size: .8rem;
+    font-weight: var(--font-weight-400);
+    padding: 1rem 1.8rem;
+    opacity: 50%;
+  }
+  
+  
+  
+  .input-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  
+    .form-input {
+      border-radius: .5rem 0 0 .5rem;
+    }
+    .btn {
+          border-radius: 0 .5rem .5rem 0;
+    }
+  }
+  
+  .icon {
+    position: absolute;
+    top:35%;
+    right:92%;
+    font-size: 1rem;
+    opacity:70%;
+  }
+  
+  .email {
+    padding-left: 3rem;
+  }
+  
+
+
+  @media (min-width: 768px) {
+
+    .subscribe .container {
+      max-width: 700px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  
+      .item-group {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        margin-right: 3rem;
+        margin-bottom: 0;
+        
+  
+        .header {
+          h2 {
+            margin: 0;
+            font-size: 1.20rem;
+            font-weight: var(--font-weight-900);
+          }
+        }     
+      }
+  
+      .btn {
+        padding: 1rem 1.5rem;
+        font-size: .8rem;
+        }
+  
+        .form-input {
+          font-size: .8rem;
+          font-weight: var(--font-weight-400);
+          padding: 1rem 1.8rem;
+        }
+      }
+    }
+  
+    @media (min-width:1400px) {
+  
+      .subscribe .container {
+        max-width: 1250px;
+        justify-content: center;
+        align-items: center;
+    
+        .item-group {
+          display: flex;
+          align-items: center;
+  
+          .header {
+            max-width: 400px;
+
+            .break {
+              display:none;
+            }
+
+            h2 {
+              font-size: 1.20rem;
+              font-weight: var(--font-weight-900);
+            }
+
+            h2::after { /*Denna property tog jag hjälp av chat GPT*/
+              content: 'to stay informed about latest updates';
+            }
+          }     
+        }
+    
+  
+        .input-flex {
+          
+        .btn {
+          padding: 1rem 2.5rem;
+          font-size: 1rem;
+          }
+    
+          .form-input {
+            font-size: .8rem;
+            font-weight: var(--font-weight-400);
+            padding: 1rem 7rem 1rem 2rem;
+          }
+  
+          input::placeholder {
+            text-transform: capitalize; /*Kod från chat GPT*/
+          }
+  
+          .icon {
+            top:35%;
+            right:95%;
+          }
+        }
+      }  
+    }

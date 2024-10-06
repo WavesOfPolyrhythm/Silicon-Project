@@ -123,6 +123,17 @@ p {
   background-color: var(--clr-dark-bg);
   background-image: linear-gradient(0deg, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
 }
+.dark header .btn-mobile {
+  color: var(--clr-white);
+}
+.dark header .navbar a {
+  text-decoration: none;
+  color: var(--clr-gray-100);
+  font-weight: 700;
+}
+.dark header .navbar a:hover {
+  color: var(--clr-primary);
+}
 
 header .container {
   min-width: 450px;
@@ -132,6 +143,15 @@ header .container {
   grid-template-columns: 1fr auto auto;
   gap: 2rem;
   padding: var(--container-padding);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo-container h3 {
+  font-weight: var(--font-weight-900);
 }
 
 #logo {
@@ -253,12 +273,17 @@ header .container {
 }
 @media (min-width: 992px) {
   header .container {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  header .container {
     max-width: 1000px;
   }
 }
 @media (min-width: 1400px) {
   header .container {
-    max-width: 1250px;
+    max-width: 1200px;
     grid-template-columns: auto 1fr auto auto;
     gap: 1.5rem;
   }
@@ -1190,8 +1215,8 @@ GAMLA SEKTIONEN SLUT
     width: 450px;
   }
   .faq-container .form-container {
-    border: 0.5px solid var(--clr-gray-300);
-    border-radius: 1rem;
+    border: 0.2px solid var(--clr-gray-300);
+    border-radius: 0.4rem;
     gap: 0;
   }
   .faq-container .form-container .forms {

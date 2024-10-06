@@ -1,3 +1,4 @@
+/*Kod från Jockes dark mode toggle video och CHAT GPT*/
 const darkmodeSwitch = document.querySelector('#darkmode-switch')
 const hasDarkmode = localStorage.getItem('darkmode')
 

@@ -1115,7 +1115,6 @@ GAMLA SEKTIONEN SLUT
   font-weight: var(--font-weight-400);
 }
 .faq-container .form-container {
-  max-width: 420px;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
